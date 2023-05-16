@@ -1,4 +1,3 @@
-# import all the app dependencies
 import pandas as pd
 import numpy as np
 import sklearn
@@ -8,9 +7,8 @@ import matplotlib
 from IPython import get_ipython
 from PIL import Image
 
-# load the encoder and model object
-model = joblib.load("rta_model_deploy3.joblib")
-encoder = joblib.load("ordinal_encoder2.joblib")
+model = joblib.load("/content/rta_model_deploy3.joblib")
+encoder = joblib.load("/content/ordinal_encoder2 (1).joblib")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -48,8 +46,6 @@ options_acc_area = ['Other', 'Office areas', 'Residential areas', ' Church areas
 # features list
 features = ['Number_of_vehicles_involved','Number_of_casualties','Hour_of_Day','Type_of_collision','Age_band_of_driver','Sex_of_driver',
     'Educational_level','Service_year_of_vehicle','Day_of_week','Area_accident_occured']
-
-
 # Give a title to web app using html syntax
 st.markdown("<h1 style='text-align: center;'>Accident Severity Prediction App 🚧</h1>", unsafe_allow_html=True)
 
@@ -97,10 +93,9 @@ def main():
        [Linkedin](https://www.linkedin.com/in/avi-kumar-talaviya-739153147/) |
        [Kaggle](https://www.kaggle.com/avikumart) 
        """)
-
-       a,b,c = st.columns([0.2,0.6,0.2])
+a,b,c = st.columns([0.2,0.6,0.2])
 with b:
- st.image("banner-picture.jpeg", use_column_width=True)
+ st.image("/content/banner-picture.jpeg", use_column_width=True)
 
 
 # description about the project and code files       
